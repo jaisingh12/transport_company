@@ -10,9 +10,14 @@ public class MyListener implements ServletContextListener{
 	try{
 		
 		Class.forName("oracle.jdbc.driver.OracleDriver");
-		con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","transport","transport");
+	//	con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","transport","transport");
 		
-/*		PreparedStatement ps2= con.prepareStatement("CREATE SEQUENCE JAVATPOINT MINVALUE 1 MAXVALUE 999999999 INCREMENT BY 1 START WITH 1 NOCACHE NOORDER NOCYCLE");
+		con = DriverManager.getConnection(
+				"jdbc:oracle:thin:@(DESCRIPTION =  (ADDRESS = (PROTOCOL = TCP)(HOST = IBM1046.daytonoh.ncr.com)(PORT = 1521)) (CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=CLTE))) ",
+				"socom_custom", "castor");
+
+		
+	/*	PreparedStatement ps2= con.prepareStatement("CREATE SEQUENCE JAVATPOINT MINVALUE 1 MAXVALUE 999999999 INCREMENT BY 1 START WITH 1 NOCACHE NOORDER NOCYCLE");
 		ps2.executeUpdate();
 		
 		PreparedStatement ps4=con.prepareStatement("CREATE TABLE PAYREGISTER(ID NUMBER,USERNAME VARCHAR2(4000), USERPASS VARCHAR2(4000), BRANCH VARCHAR2(4000),DATEOFJOINING VARCHAR2(4000), DATEOFBIRTH VARCHAR2(4000), SALARY VARCHAR2(4000),CONSTRAINT PAYREGISTER_PK PRIMARY KEY (ID) ENABLE)");
@@ -29,7 +34,7 @@ public class MyListener implements ServletContextListener{
 		Statement stmt=con.createStatement();
 		stmt.executeUpdate("CREATE TRIGGER  BI_PAYREGISTER before insert on PAYREGISTER for each row begin select JAVATPOINT.nextval into :NEW.ID from dual;end");
 		stmt.executeUpdate("CREATE TRIGGER  BI_TINSTALL before insert on TINSTALL for each row begin select JAVATPOINT.nextval into :NEW.ID from dual;end");
-*/			
+	*/		
 	}
 		
 	    catch(Exception e){
