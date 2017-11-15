@@ -16,6 +16,7 @@ Connection con = DriverManager.getConnection(
 		"socom_custom", "castor");
 
 PreparedStatement ps=con.prepareStatement("insert into payregister values(?,?,?,?,?,?,?)");
+error;
 
 ps.setInt(1,2);
 ps.setString(2,username);
