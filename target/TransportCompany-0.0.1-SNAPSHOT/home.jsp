@@ -1,7 +1,7 @@
         <jsp:include page="header.jsp"></jsp:include>
             <div id="gbox-bg">
               <div id="gbox-grd">
-                <h2>WELCOME TO OUR TRUCK TRACKING COMPANY</h2>
+                <h2>WELCOME TO OUR TRANSPORT MANAGEMENT SYSTEM</h2>
 				<marquee dir="ltr"><font style="color: navy;">Delhi-Kanpur,Agra-Kanpur,Agra-Ghaziabad,Kanpur-Delhi........</font></marquee>
 				<p>You can find All the Information regarding our transport company's services ,Trucks and can contact us to get your vehicle installed in our company</p>
 
