@@ -1,42 +1,39 @@
+<%@page import="com.javatpoint.DbConn"%>
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%@page import="java.sql.*"%>
-<%try{
+<%
+	try {
 
-String username=request.getParameter("username");
-String userpass=request.getParameter("userpass");
+		String username = request.getParameter("username");
+		String userpass = request.getParameter("userpass");
 
-String dateofbirth=request.getParameter("dob");
-String dateofjoining=request.getParameter("doj");
-String salary=request.getParameter("salary");
-String branch=request.getParameter("branch");
-Class.forName("oracle.jdbc.driver.OracleDriver");
+		String dateofbirth = request.getParameter("dob");
+		String dateofjoining = request.getParameter("doj");
+		String salary = request.getParameter("salary");
+		String branch = request.getParameter("branch");
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		Connection con = DbConn.getConnection();
 
-Connection con = DriverManager.getConnection(
-		"jdbc:oracle:thin:@(DESCRIPTION =  (ADDRESS = (PROTOCOL = TCP)(HOST = IBM1046.daytonoh.ncr.com)(PORT = 1521)) (CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=CLTE))) ",
-		"socom_custom", "castor");
+		PreparedStatement ps = con.prepareStatement("insert into payregister values(?,?,?,?,?,?,?)");
 
-PreparedStatement ps=con.prepareStatement("insert into payregister values(?,?,?,?,?,?,?)");
-
-
-ps.setInt(1,2);
-ps.setString(2,username);
-ps.setString(3,userpass);
-ps.setString(4,branch);
-ps.setString(6,dateofbirth);
-ps.setString(5,dateofjoining);
-ps.setString(7,salary);
-int s=ps.executeUpdate();
-if(s>0){
+		ps.setInt(1, 2);
+		ps.setString(2, username);
+		ps.setString(3, userpass);
+		ps.setString(4, branch);
+		ps.setString(6, dateofbirth);
+		ps.setString(5, dateofjoining);
+		ps.setString(7, salary);
+		int s = ps.executeUpdate();
+		if (s > 0) {
 %>
 <jsp:forward page="admin.jsp"></jsp:forward>
-<% 
-}
-else{
-out.print("sorry!please fill correct detail and try again" );
-}
-}catch(SQLException e2){
-out.print("sorry!please fill correct detail and try again" );
-e2.printStackTrace();
-}
+<%
+	} else {
+			out.print("sorry!please fill correct detail and try again");
+		}
+	} catch (SQLException e2) {
+		out.print("sorry!please fill correct detail and try again");
+		e2.printStackTrace();
+	}
 %>
 

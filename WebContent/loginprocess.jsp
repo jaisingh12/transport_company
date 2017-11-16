@@ -1,3 +1,4 @@
+<%@page import="com.javatpoint.DbConn"%>
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%@page import="org.omg.CORBA.PUBLIC_MEMBER"%>
 <%@page import="java.sql.*"%>
@@ -9,10 +10,7 @@
 	String branch = request.getParameter("branch");
 	boolean status = false;
 	try {
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection con = DriverManager.getConnection(
-				"jdbc:oracle:thin:@(DESCRIPTION =  (ADDRESS = (PROTOCOL = TCP)(HOST = IBM1046.daytonoh.ncr.com)(PORT = 1521)) (CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=CLTE))) ",
-				"socom_custom", "castor");
+		Connection con = DbConn.getConnection();
 		PreparedStatement ps = con
 				.prepareStatement("select * from payregister where username=? and userpass=? and branch=? ");
 		ps.setString(1, username);

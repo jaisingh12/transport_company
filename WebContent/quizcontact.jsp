@@ -1,3 +1,4 @@
+<%@page import="com.javatpoint.DbConn"%>
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%@page import="java.sql.*"%>
 
@@ -11,8 +12,8 @@ String email= request.getParameter("email");
 String phone= request.getParameter("phone");
 String message= request.getParameter("message");
  
-Class.forName("oracle.jdbc.driver.OracleDriver");
-Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+Connection con = DbConn.getConnection();
+
 
 PreparedStatement ps=con.prepareStatement("insert into quizcontact values(?,?,?,?)");
 ps.setString(1,name);

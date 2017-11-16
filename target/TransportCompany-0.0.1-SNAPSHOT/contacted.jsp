@@ -1,4 +1,5 @@
 
+<%@page import="com.javatpoint.DbConn"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -9,8 +10,7 @@
 				<marquee dir="ltr"><font style="color: navy;">Delhi-Kanpur,Agra-Kanpur,Agra-Ghaziabad,Kanpur-Delhi........</font></marquee>
 
 				<%
-				Class.forName("oracle.jdbc.driver.OracleDriver");
-				Connection con= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+				Connection con = DbConn.getConnection();
 				PreparedStatement ps= con.prepareStatement("select name,email,phone,message from quizcontact where rownum<7 ");
 				ResultSet rs= ps.executeQuery();
 				out.print("<table border='3'>");

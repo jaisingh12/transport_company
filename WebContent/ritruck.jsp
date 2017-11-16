@@ -1,4 +1,4 @@
-
+<%@page import="com.javatpoint.DbConn"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -9,14 +9,12 @@
 	<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WELCOME TO OUR TRUCK
 		TRACKING COMPANY</h2>
 	<marquee dir="ltr">
-		<font style="color: navy;">Delhi-Kanpur,Agra-Kanpur,Agra-Ghaziabad,Kanpur-Delhi........</font>
+		<font style="color: navy;">Delhi-Kanpur, Agra-Kanpur,
+			Agra-Ghaziabad, Kanpur-Delhi</font>
 	</marquee>
 	<br />
 	<%
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection con = DriverManager.getConnection(
-				"jdbc:oracle:thin:@(DESCRIPTION =  (ADDRESS = (PROTOCOL = TCP)(HOST = IBM1046.daytonoh.ncr.com)(PORT = 1521)) (CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=CLTE))) ",
-				"socom_custom", "castor");
+		Connection con = DbConn.getConnection();
 		PreparedStatement ps = con.prepareStatement(
 				"Select tmodel,tno,malik,tfrom,tto,idate from tinstall where rownum <7 order by id desc");
 		ResultSet rs = ps.executeQuery();
@@ -45,23 +43,17 @@
 		<div id="features">
 			<h2>FEATURED SERVICES</h2>
 			<ul>
-				<li><a href="http://www.javatpoint.com">Free Core java
-						tutorial</a></li>
-				<li><a href="http://www.javatpoint.com">Jsp tutorial</a></li>
-				<li><a href="http://www.javatpoint.com">Free Android
-						Tutorial</a></li>
-				<li><a href="http://www.javatpoint.com">Struts and Hibernet
-						Tutorial</a></li>
-
+				<li><a href="ritruck.jsp">RECENTLY INSTALLED TRUCKS</a></li>
+				<li><a href="status.jsp">STATUS</a></li>
+				<li><a href="towards.jsp">TOWARDS HERE</a></li>
 			</ul>
 			<ul>
-				<li><a href="http://www.javatpoint.com">More Project</a></li>
-				<li><a href="http://www.cstpoint.com">C,C++ Tutorial</a></li>
-				<li><a href="http://www.javatpoint.com/forum/">The forum</a></li>
-				<li><a href="http://www.cstpoint.com">Html,Sql Tutorial</a></li>
+				<li><a href="services.jsp">SERVICES</a></li>
+				<li><a href="contactus.jsp">CONTACT US</a></li>
 			</ul>
 			<div class="clear"></div>
 		</div>
+
 	</div>
 	<div id="newsletter">
 

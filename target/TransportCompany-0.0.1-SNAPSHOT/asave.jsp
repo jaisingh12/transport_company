@@ -10,8 +10,13 @@ String dateofjoining=request.getParameter("doj");
 String salary=request.getParameter("salary");
 String branch=request.getParameter("branch");
 Class.forName("oracle.jdbc.driver.OracleDriver");
-Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+
+Connection con = DriverManager.getConnection(
+		"jdbc:oracle:thin:@(DESCRIPTION =  (ADDRESS = (PROTOCOL = TCP)(HOST = IBM1046.daytonoh.ncr.com)(PORT = 1521)) (CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=CLTE))) ",
+		"socom_custom", "castor");
+
 PreparedStatement ps=con.prepareStatement("insert into payregister values(?,?,?,?,?,?,?)");
+
 
 ps.setInt(1,2);
 ps.setString(2,username);

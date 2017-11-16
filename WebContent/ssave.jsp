@@ -1,3 +1,4 @@
+<%@page import="com.javatpoint.DbConn"%>
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%@ page import="java.sql.*" %>
 
@@ -8,8 +9,8 @@ String id=(String)session.getAttribute("id");
 System.out.print(id);
 if(id.length()>0){
 try{
-Class.forName("oracle.jdbc.driver.OracleDriver");
-Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","oracle");
+	Connection con = DbConn.getConnection();
+	
 
 PreparedStatement ps=con.prepareStatement("update tinstall set status='"+status+"' where id='"+id+"'");
 //ps.setString(1,n);

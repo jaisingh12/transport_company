@@ -1,3 +1,4 @@
+<%@page import="com.javatpoint.DbConn"%>
 <%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
 <%@page import="java.sql.*"%>
 <%
@@ -14,11 +15,9 @@
 		String to = request.getParameter("to");
 		java.util.Date sqdate = Calendar.getInstance().getTime();
 		java.sql.Date dat = new java.sql.Date(sqdate.getTime());
-
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		Connection con = DriverManager.getConnection(
-				"jdbc:oracle:thin:@(DESCRIPTION =  (ADDRESS = (PROTOCOL = TCP)(HOST = IBM1046.daytonoh.ncr.com)(PORT = 1521)) (CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=CLTE))) ",
-				"socom_custom", "castor");
+		
+		Connection con = DbConn.getConnection();
+		
 		PreparedStatement ps = con.prepareStatement("insert into tinstall values(?,?,?,?,?,?,?,?,?,?,?)");
 
 		ps.setInt(1, 1);
