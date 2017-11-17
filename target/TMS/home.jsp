@@ -4,7 +4,7 @@
 	<div id="gbox-grd">
 		<h2>WELCOME TO OUR TRANSPORT MANAGEMENT SYSTEM</h2>
 		<marquee dir="ltr">
-			<font style="color: navy;">Delhi-Kanpur, Agra-Kanpur, Agra-Ghaziabad, Kanpur-Delhi........</font>
+			<font style="color: navy;">Delhi-Kanpur,Agra-Kanpur,Agra-Ghaziabad,Kanpur-Delhi........</font>
 		</marquee>
 		<p>You can find All the Information regarding our transport
 			company's services ,Trucks and can contact us to get your vehicle
@@ -25,6 +25,8 @@
 			</ul>
 			<div class="clear"></div>
 		</div>
+
+
 		<div id="newsletter">
 
 			<%
@@ -39,8 +41,7 @@
 				}
 			%>
 
-			
-		<div class="clear"></div>
+		</div>
 
 	</div>
 </div>

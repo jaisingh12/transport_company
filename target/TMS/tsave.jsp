@@ -15,15 +15,10 @@
 		String to = request.getParameter("to");
 		java.util.Date sqdate = Calendar.getInstance().getTime();
 		java.sql.Date dat = new java.sql.Date(sqdate.getTime());
-
-	//	Class.forName("oracle.jdbc.driver.OracleDriver");
 		
 		Connection con = DbConn.getConnection();
-		/* 
-		Connection con = DriverManager.getConnection(
-				"jdbc:oracle:thin:@(DESCRIPTION =  (ADDRESS = (PROTOCOL = TCP)(HOST = IBM1046.daytonoh.ncr.com)(PORT = 1521)) (CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=CLTE))) ",
-				"socom_custom", "castor");
-		 */PreparedStatement ps = con.prepareStatement("insert into tinstall values(?,?,?,?,?,?,?,?,?,?,?)");
+		
+		PreparedStatement ps = con.prepareStatement("insert into tinstall values(?,?,?,?,?,?,?,?,?,?,?)");
 
 		ps.setInt(1, 1);
 		ps.setString(2, model);

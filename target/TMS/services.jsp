@@ -69,19 +69,20 @@
 			<div id="right"></div>
 		</form>
 		<br />
-		<div id="features">
-			<h2>FEATURED SERVICES</h2>
-			<ul>
-				<li><a href="ritruck.jsp">RECENTLY INSTALLED TRUCKS</a></li>
-				<li><a href="status.jsp">STATUS</a></li>
-				<li><a href="towards.jsp">TOWARDS HERE</a></li>
-			</ul>
-			<ul>
-				<li><a href="services.jsp">SERVICES</a></li>
-				<li><a href="contactus.jsp">CONTACT US</a></li>
-			</ul>
-			<div class="clear"></div>
-		</div>
+	<div id="features">
+									<h2>FEATURED SERVICES</h2>
+									<ul>
+										<li><a href="ritruck.jsp">RECENTLY INSTALLED TRUCKS</a></li>
+										<li><a href="status.jsp">STATUS</a></li>
+										<li><a href="towards.jsp">TOWARDS HERE</a></li>
+									</ul>
+									<ul>
+										<li><a href="services.jsp">SERVICES</a></li>
+										<li><a href="contactus.jsp">CONTACT US</a></li>
+									</ul>
+									<div class="clear"></div>
+								</div>
+
 
 		<div class="clear"></div>
 

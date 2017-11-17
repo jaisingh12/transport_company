@@ -63,8 +63,8 @@
 		</marquee>
 		<br />
 		<%
-		Connection con = DbConn.getConnection();
-		PreparedStatement ps = con
+			Connection con = DbConn.getConnection();
+			PreparedStatement ps = con
 					.prepareStatement("Select tmodel,tno,tfrom,tto,status,id from tinstall order by id desc ");
 			ResultSet rs = ps.executeQuery();
 			out.print("<table cellspacing='3',cellpadding='3' border='3'>");
@@ -104,6 +104,7 @@
 			</ul>
 			<div class="clear"></div>
 		</div>
+
 	</div>
 	<div id="newsletter">
 

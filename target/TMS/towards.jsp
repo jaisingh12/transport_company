@@ -1,4 +1,5 @@
 
+<%@page import="com.javatpoint.DbConn"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -31,10 +32,7 @@
 		<br />
 		<%
 			String branch = (String) session.getAttribute("branch");
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con = DriverManager.getConnection(
-					"jdbc:oracle:thin:@(DESCRIPTION =  (ADDRESS = (PROTOCOL = TCP)(HOST = IBM1046.daytonoh.ncr.com)(PORT = 1521)) (CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME=CLTE))) ",
-					"socom_custom", "castor");
+			Connection con = DbConn.getConnection();
 			PreparedStatement ps = con
 					.prepareStatement("Select tmodel,tno,malik,tfrom from tinstall where rownum <7 and tto='" + branch
 							+ "' order by id desc ");
@@ -61,7 +59,7 @@
 
 		<br />
 
-	<div id="features">
+		<div id="features">
 			<h2>FEATURED SERVICES</h2>
 			<ul>
 				<li><a href="ritruck.jsp">RECENTLY INSTALLED TRUCKS</a></li>
@@ -74,6 +72,7 @@
 			</ul>
 			<div class="clear"></div>
 		</div>
+
 	</div>
 	<div id="newsletter">
 
