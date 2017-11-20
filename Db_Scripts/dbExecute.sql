@@ -1,6 +1,9 @@
 set echo off verify off showmode off feedback off;
 prompt
 
+set linesize 150;
+set pagesize 200;
+
 connect socom_custom/castor@testdb;
 
 spool C:\Teamcity\TMS\DB_logs\dbExecute.log
@@ -17,7 +20,7 @@ prompt "Kill all active sessions for testdb"
                 END;
                 /
 
-select * from tinstall;
+select TMODEL,TNO,MOBILE from tinstall;
 
 spool off
 exit;
