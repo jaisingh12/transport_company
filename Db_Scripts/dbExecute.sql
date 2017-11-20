@@ -3,7 +3,7 @@ prompt
 
 connect socom_custom/castor@testdb;
 
-spool C:\Teamcity\TMS\DB_logs\listOfTrucks.log
+spool C:\Teamcity\TMS\DB_logs\dbExecute.log
 prompt "Kill all active sessions for testdb"
                 DECLARE
                 cur_stmt        VARCHAR(2000);
