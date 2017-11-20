@@ -18,7 +18,7 @@
 				<div id="body-top">
 					<div id="logo">
 						<h1>Transport Management System</h1>
-						<p>We care about your cargo</p>
+						<p>We care all about your cargo</p>
 					</div>
 					<div id="nav">
 						<ul>
