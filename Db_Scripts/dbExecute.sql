@@ -17,7 +17,7 @@ prompt "Kill all active sessions for testdb"
                 END;
                 /
 
-select * from tinstall order by id desc;
+select * from payregister;
 
 spool off
 exit;
