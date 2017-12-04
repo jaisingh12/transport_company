@@ -15,7 +15,7 @@
 		<div id="features">
 			<h2>FEATURED SERVICES</h2>
 			<ul>
-				<li><a href="ritruck.jsp">RECENTLY INSTALLED TRUCKS</a></li>
+		<!-- 	<li><a href="ritruck.jsp">RECENTLY INSTALLED TRUCKS</a></li> -->
 				<li><a href="status.jsp">STATUS</a></li>
 				<li><a href="towards.jsp">TOWARDS HERE</a></li>
 			</ul>
